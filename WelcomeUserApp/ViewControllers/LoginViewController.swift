@@ -31,6 +31,10 @@ class LoginViewController: UIViewController {
             welcomeVC.userName = userNameTF.text
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     // MARK: - IBActions
     @IBAction func unwind(for segue: UIStoryboardSegue) {
