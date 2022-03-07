@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.userName = userNameTF.text
-        print(welcomeVC)
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -33,11 +32,30 @@ class LoginViewController: UIViewController {
         passwordTF.text = nil
     }
     
+    @IBAction func logInButton() {
+        if userNameTF.text != userName && passwordTF.text != password {
+            alertController(title: "Invalid login or password!", message: "Please, enter correct login and password!")
+        }
+    }
+    
     @IBAction func showUserName() {
+        alertController(title: "Oops!", message: "Your name is User 🙂")
     }
     
     @IBAction func showPassword() {
+        alertController(title: "Oops!", message: "Your password is Password 🙂")
     }
-    
+}
+
+// MARK: - AlertController
+extension LoginViewController {
+    private func alertController(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTF.text = nil
+        }
+        alert.addAction(alertAction)
+        present(alert, animated: true)
+    }
 }
 
