@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
@@ -22,20 +23,20 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userNameTF.text
+        
+        if userNameTF.text != userName && passwordTF.text != password {
+            alertController(title: "Invalid login or password!", message: "Please, enter correct login and password!")
+        } else {
+            guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+            welcomeVC.userName = userNameTF.text
+        }
     }
 
+    // MARK: - IBActions
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         guard let _ = segue.source as? WelcomeViewController else { return }
         userNameTF.text = nil
         passwordTF.text = nil
-    }
-    
-    @IBAction func logInButton() {
-        if userNameTF.text != userName && passwordTF.text != password {
-            alertController(title: "Invalid login or password!", message: "Please, enter correct login and password!")
-        }
     }
     
     @IBAction func showUserName() {
