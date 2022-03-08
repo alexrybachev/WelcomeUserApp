@@ -40,7 +40,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
-                                            <action selector="logInButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaR-mG-vre"/>
+                                            <action selector="logInUser" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVO-KB-dSA"/>
                                             <segue destination="IgI-pq-9t4" kind="presentation" identifier="showWelcomePage" modalPresentationStyle="fullScreen" id="DZT-eL-ima"/>
                                         </connections>
                                     </button>
@@ -80,7 +80,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logInButton" destination="KrM-Lf-9CU" id="bjf-64-QoM"/>
                         <outlet property="passwordTF" destination="LcI-ES-iHc" id="4Tx-tV-lsa"/>
                         <outlet property="userNameTF" destination="2Gg-kU-xGA" id="h8k-eQ-3rd"/>
                     </connections>
