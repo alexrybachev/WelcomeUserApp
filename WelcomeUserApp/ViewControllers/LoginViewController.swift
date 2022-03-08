@@ -24,8 +24,9 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if userNameTF.text != userName && passwordTF.text != password {
+        if userNameTF.text != userName || passwordTF.text != password {
             alertController(title: "Invalid login or password!", message: "Please, enter correct login and password!")
+            return
         } else {
             guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
             welcomeVC.userName = userNameTF.text
@@ -38,17 +39,28 @@ class LoginViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let _ = segue.source as? WelcomeViewController else { return }
+//        guard let _ = segue.source as? WelcomeViewController else { return }
         userNameTF.text = nil
         passwordTF.text = nil
     }
     
-    @IBAction func showUserName() {
-        alertController(title: "Oops!", message: "Your name is User 🙂")
+    @IBAction func logInButton() {
+        if userNameTF.text != userName || passwordTF.text != password {
+            alertController(title: "Invalid login or password!",
+                message: "Please, enter correct login and password!")
+            return
+        }
     }
     
-    @IBAction func showPassword() {
-        alertController(title: "Oops!", message: "Your password is Password 🙂")
+    @IBAction func showUserOrPassword(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            alertController(title: "Oops!",
+                message: "Your name is \(userName) 🙂")
+        default:
+            alertController(title: "Oops!",
+                message: "Your password is \(password) 🙂")
+        }
     }
 }
 

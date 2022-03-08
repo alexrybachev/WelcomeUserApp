@@ -40,26 +40,27 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
+                                            <action selector="logInButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="JpB-KW-zEe"/>
                                             <segue destination="IgI-pq-9t4" kind="presentation" modalPresentationStyle="fullScreen" id="DZT-eL-ima"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="K31-mE-gNg">
                                         <rect key="frame" x="50.5" y="84" width="273" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZs-Af-auP">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZs-Af-auP">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot login?"/>
                                                 <connections>
-                                                    <action selector="showUserName" destination="BYZ-38-t0r" eventType="touchUpInside" id="RS0-tk-xWj"/>
+                                                    <action selector="showUserOrPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAK-nt-fwP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-bL-pQI">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-bL-pQI">
                                                 <rect key="frame" x="150" y="0.0" width="123" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot password?"/>
                                                 <connections>
-                                                    <action selector="showPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1U-U4-SAX"/>
+                                                    <action selector="showUserOrPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X3W-HQ-Av1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -68,7 +69,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z4l-VN-Plk" secondAttribute="trailing" constant="60" id="6VP-bb-2lI"/>
                             <constraint firstItem="z4l-VN-Plk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="6xI-aa-IX6"/>
@@ -138,6 +139,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
