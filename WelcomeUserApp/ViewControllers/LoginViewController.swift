@@ -13,19 +13,26 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
+    @IBOutlet var logInButton: UIButton!
+    
     // MARK: - Private Properties
     private let userName = "User"
     private let password = "Password"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userNameTF.delegate = self
+        passwordTF.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if userNameTF.text != userName || passwordTF.text != password {
-            alertController(title: "Invalid login or password!", message: "Please, enter correct login and password!")
+            alertController(
+                title: "Invalid login or password!",
+                message: "Please, enter correct login and password!"
+            )
             return
         } else {
             guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
@@ -36,18 +43,18 @@ class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-
+    
     // MARK: - IBActions
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-//        guard let _ = segue.source as? WelcomeViewController else { return }
+        //        guard let _ = segue.source as? WelcomeViewController else { return }
         userNameTF.text = nil
         passwordTF.text = nil
     }
     
-    @IBAction func logInButton() {
+    @IBAction func logInUser() {
         if userNameTF.text != userName || passwordTF.text != password {
             alertController(title: "Invalid login or password!",
-                message: "Please, enter correct login and password!")
+                            message: "Please, enter correct login and password!")
             return
         }
     }
@@ -55,11 +62,15 @@ class LoginViewController: UIViewController {
     @IBAction func showUserOrPassword(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            alertController(title: "Oops!",
-                message: "Your name is \(userName) 🙂")
+            alertController(
+                title: "Oops!",
+                message: "Your name is \(userName) 🙂"
+            )
         default:
-            alertController(title: "Oops!",
-                message: "Your password is \(password) 🙂")
+            alertController(
+                title: "Oops!",
+                message: "Your password is \(password) 🙂"
+            )
         }
     }
 }
@@ -76,3 +87,16 @@ extension LoginViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else {
+            logInUser()
+            performSegue(withIdentifier: "showWelcomePage", sender: nil)
+        }
+        return true
+    }
+}
