@@ -15,26 +15,15 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.clear
         setColor()
         welcomeLabel.text = "Welcome, \(userName ?? "")! 😜"
     }
     
     private func setColor() {
+        view.backgroundColor = UIColor.clear
         
-        let primaryColor = UIColor(
-            red: 153 / 255,
-            green: 26 / 255,
-            blue: 61 / 255,
-            alpha: 1
-        ).cgColor
-        
-        let secondaryColor = UIColor(
-            red: 243 / 255,
-            green: 255 / 255,
-            blue: 51 / 255,
-            alpha: 1
-        ).cgColor
+        let primaryColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1).cgColor
+        let secondaryColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1).cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds

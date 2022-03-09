@@ -38,7 +38,9 @@
                                         <rect key="frame" x="150" y="0.0" width="74" height="44"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Log In"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.160495265" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="IgI-pq-9t4" kind="presentation" identifier="showWelcomePage" modalPresentationStyle="fullScreen" id="DZT-eL-ima"/>
                                         </connections>
@@ -49,7 +51,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZs-Af-auP">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Forgot login?"/>
+                                                <state key="normal" title="Forgot login?">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="showUserOrPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAK-nt-fwP"/>
                                                 </connections>
@@ -57,7 +61,9 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-bL-pQI">
                                                 <rect key="frame" x="150" y="0.0" width="123" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Forgot password?"/>
+                                                <state key="normal" title="Forgot password?">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="showUserOrPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X3W-HQ-Av1"/>
                                                 </connections>

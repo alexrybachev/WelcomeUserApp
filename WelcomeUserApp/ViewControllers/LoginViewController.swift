@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setColor()
         userNameTF.delegate = self
         passwordTF.delegate = self
     }
@@ -50,18 +50,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func showUserOrPassword(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
-            alertController(
-                title: "Oops!",
-                message: "Your name is \(userName) 🙂"
-            )
-        default:
-            alertController(
-                title: "Oops!",
-                message: "Your password is \(password) 🙂"
-            )
-        }
+        sender.tag == 0
+        ? alertController(title: "Oops!", message: "Your name is \(userName) 🙂")
+        : alertController(title: "Oops!", message: "Your password is \(password) 🙂")
     }
 }
 
@@ -86,5 +77,22 @@ extension LoginViewController: UITextFieldDelegate {
             performSegue(withIdentifier: "showWelcomePage", sender: nil)
         }
         return true
+    }
+}
+
+// MARK: - Gradient Color
+extension LoginViewController {
+    private func setColor() {
+        view.backgroundColor = UIColor.clear
+        
+        let primaryColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1).cgColor
+        let secondaryColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1).cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [primaryColor, secondaryColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
