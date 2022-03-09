@@ -32,29 +32,21 @@ class LoginViewController: UIViewController {
                 message: "Please, enter correct login and password!"
             )
             return
-        } else {
-            guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-            welcomeVC.userName = userNameTF.text
         }
+        
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userName = userNameTF.text
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
     // MARK: - IBActions
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        //        guard let _ = segue.source as? WelcomeViewController else { return }
         userNameTF.text = nil
         passwordTF.text = nil
-    }
-    
-    @IBAction func logInUser() {
-        if userNameTF.text != userName || passwordTF.text != password {
-            alertController(title: "Invalid login or password!",
-                            message: "Please, enter correct login and password!")
-            return
-        }
     }
     
     @IBAction func showUserOrPassword(_ sender: UIButton) {
@@ -88,11 +80,9 @@ extension LoginViewController {
 // MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
         if textField == userNameTF {
             passwordTF.becomeFirstResponder()
         } else {
-            logInUser()
             performSegue(withIdentifier: "showWelcomePage", sender: nil)
         }
         return true

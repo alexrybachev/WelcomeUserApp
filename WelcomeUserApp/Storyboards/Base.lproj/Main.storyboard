@@ -32,7 +32,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="E9i-Sw-bs0">
-                                <rect key="frame" x="20" y="528" width="374" height="114"/>
+                                <rect key="frame" x="20" y="326" width="374" height="114"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrM-Lf-9CU">
                                         <rect key="frame" x="150" y="0.0" width="74" height="44"/>
@@ -40,7 +40,6 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
-                                            <action selector="logInUser" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVO-KB-dSA"/>
                                             <segue destination="IgI-pq-9t4" kind="presentation" identifier="showWelcomePage" modalPresentationStyle="fullScreen" id="DZT-eL-ima"/>
                                         </connections>
                                     </button>
@@ -73,7 +72,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z4l-VN-Plk" secondAttribute="trailing" constant="60" id="6VP-bb-2lI"/>
                             <constraint firstItem="z4l-VN-Plk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="6xI-aa-IX6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E9i-Sw-bs0" secondAttribute="bottom" constant="220" id="TW8-Cq-UQT"/>
+                            <constraint firstItem="E9i-Sw-bs0" firstAttribute="top" secondItem="z4l-VN-Plk" secondAttribute="bottom" constant="60" id="j1Y-zO-ur1"/>
                             <constraint firstItem="E9i-Sw-bs0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kY8-IW-UoW"/>
                             <constraint firstItem="z4l-VN-Plk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="mlD-ip-6Zl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E9i-Sw-bs0" secondAttribute="trailing" constant="20" id="nqW-76-h8F"/>
